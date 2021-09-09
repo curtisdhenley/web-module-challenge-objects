@@ -18,6 +18,7 @@ The function should:
 function createMenuItem(name, price, category) {
     return {name, price, category};
 }
+console.log(createMenuItem('tacos', 8, 'lunch'));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Invoke your function!
@@ -30,7 +31,7 @@ Test your createMenuItems function by doing the following:
 */
 console.log(createMenuItem("pizza", 5, "lunch"));
 console.log(createMenuItem("Fettuccine Alfredo", 18, "dinner"));
-console.log(createMenuItem("Cannoli", 8, "dinner"));
+console.log(createMenuItem("Cannoli", 8, "dessert"));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -79,7 +80,7 @@ const reviews = [
 Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
-console.log(reviews[5]);
+console.log(reviews[5].feedback);
 
 
 
@@ -103,17 +104,10 @@ Write a function that creates an object with name, rating, feedback, add the new
   4. should return the resulting array
 */
 
-const newArray = [];
-
-function addReview(array) {
-  for (let i = 0; i < array.length; i++) {
-    if (array[i].name === "Daniela") {
-      newArray.push(array[i])
-    }
+function addReview(array, number) {
+  return `${array[number].name} gave them a ${array[number].rating} star review, and their feedback was: ${array[number].feedback}`
   }
-  return newArray;
-}
-console.log(addReview(reviews));
+  console.log(addReview(reviews, 4));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function to return a review based on the index of the review in the array.
@@ -147,7 +141,7 @@ Use the getLastReview function below to do the following:
 
 
 function getLastReview(array) {
-  return array[array.length-1].name + ' gave the restaurant a ' + array[array.length-1].rating + ' star review, and their feedback was: ' + array[array.length-1].feedback;
+  return `${array[array.length-1].name} gave the restaurant a ${array[array.length-1].rating} star review, and their feedback was: ${array[array.length-1].feedback}`;
  }
  console.log(getLastReview(reviews));
 
