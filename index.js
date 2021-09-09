@@ -108,7 +108,7 @@ const newArray = [];
 
 function addReview(array) {
   for (let i = 0; i < array.length; i++) {
-    if (arrays[i].name === "Daniela" && arrays[i].rating === 5 && array[i].feedback === "Beautiful atmosphere and wonderful vegan options") {
+    if (array[i].name === "Daniela") {
       newArray.push(array[i])
     }
   }
@@ -127,9 +127,10 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
-}
+function getReviewByIndex(array, index) {
+  return array[index].name + ' gave the restaurant a ' + array[index].rating + ' star review, and their feedback was: ' + array[index].feedback;
+ }
+ console.log(getReviewByIndex(reviews, 4));
 
 
   
