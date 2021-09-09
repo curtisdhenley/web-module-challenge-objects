@@ -49,17 +49,16 @@ const burger = {
   name: "Burger",
   price: 18,
   category: "Lunch",
-  discount: function (type) {
+  discount: function(type) {
     if (type === "teacher" || type === "student") {
-      return this.price - 4.50;
+      return this.price - (this.price * 0.25);
     } else if (type === "public") {
-      return this.price - 1.80;
+      return this.price - (this.price * 0.10);
     }
   }
-return discount;
 }
 
-console.log(discount("teacher"));
+console.log(burger.discount("public"));
 
 
 
